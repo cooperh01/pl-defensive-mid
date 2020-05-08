@@ -61,9 +61,7 @@ select
     Order by (Round((((t.goals_conceded - p.conceded_overall)*90)/(3420 - minutes_played_overall) -          p.conceded_per_90_overall),2)) desc
     Limit 25
 ```
-
-
--	Python code for Bar Chart:
+- Python code for Bar Chart:
 ```python
 # Bar Graph (Decrease in goals conceded when player is on the pitch (per 90 mins))
 
@@ -80,9 +78,7 @@ plt.show()
 
 ## Scatter Graph: Retrieving possession;
 
--	
-
-Using data from as.eu I was able to join them together in MySQL and produce a scatter graph of Successful Tackles v interceptions in Python. (see python code below)
+- Using data from as.eu I was able to join them together in MySQL and produce a scatter graph of Successful Tackles per 90 v interceptions per 90 in Python. (see python code below)
 ```python
 # Scatter Graph: Obtain possession(Successful Tackles v interceptions)
 
