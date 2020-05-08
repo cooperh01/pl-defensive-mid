@@ -87,9 +87,6 @@ for i, txt in enumerate(plr):
 
 plt.show()
 ```
--	Unfortunately, the data did not have the player’s positions and their names were slightly different to the dataset from footystats.co.uk so I was unable to join them and therefore some non-midfielders were included in the graph.
-
-
 
 ## Scatter Graph: Retains possession: 
 
