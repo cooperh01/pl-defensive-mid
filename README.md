@@ -8,7 +8,7 @@
 ## Code and Resources Used:
 
 -	Jupyter Notebook 6.0.3
--	MySQL
+-	MySQL Workbench 8.0.19
 -	Python Version 3.7
 -	Packages used: pandas, numpy, matplot.lib, seaborn
 -	Datasets from Footystats.co.uk for the Premier League 2018/19 season: players.csv, teams.csv, league_matches.csv and league_stats.csv. https://footystats.org/download-stats-csv
