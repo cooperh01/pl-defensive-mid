@@ -31,7 +31,7 @@
 
 ![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Retrieving_poss_graph.png)
 
-![](
+![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Radar_Chart_KCC.png)
 
 
 ## Model Building:
