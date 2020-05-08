@@ -38,8 +38,29 @@
 
 ## Bar Graph: Decrease in goals conceded when player is on the pitch (per 90 mins);
 
--	I wanted to find the 'Decrease in goals conceded when player is on the pitch (per 90 mins)'. By joining the players.csv and teams.csv tables in MySQL, I was able to create a conceded_WO_per_90 column and subtract it from the conceded_per_90_overall to create the conceded_per_90_diff column. See Below:
+- I wanted to find the 'Decrease in goals conceded when player is on the pitch (per 90 mins)'. By joining the players.csv and teams.csv tables in MySQL, I was able to create a conceded_WO_per_90 column and subtract it from the conceded_per_90_overall to create the conceded_per_90_diff column. See Below:
 
+```
+select
+	p.full_name
+    ,p.Current_Club
+    ,p.age + 1 age
+    ,p.position
+    ,p.minutes_played_overall
+    ,p.conceded_overall
+    ,p.conceded_per_90_overall
+    ,3420 - minutes_played_overall minutes_not_played
+    ,t.goals_conceded - p.conceded_overall conceded_WO
+    ,Round(((t.goals_conceded - p.conceded_overall)*90)/(3420 - minutes_played_overall),2) conceded_WO_per_90
+    ,(Round((((t.goals_conceded - p.conceded_overall)*90)/(3420 - minutes_played_overall) - p.conceded_per_90_overall),2)) conceded_per_90_diff
+    From players p
+    Left Join teams t on p.Current_Club = t.common_name
+    Where p.minutes_played_overall > 900
+        AND p.position = 'Midfielder'
+        AND (p.age + 1) < 27
+    Order by (Round((((t.goals_conceded - p.conceded_overall)*90)/(3420 - minutes_played_overall) -                                      p.conceded_per_90_overall),2)) desc
+    Limit 25
+```
 
 
 -	Python code for Bar Chart:
