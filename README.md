@@ -1,6 +1,6 @@
 # Scouting a Defensive Midfielder: Data Analysis (Using MySQL and Python)
 
-## Project Overview:
+# Project Overview:
 
 -	Scouting a premier league midfielder who is below the age of 27 and who will reduce the number of goals conceded by the team.
 -	Obtained player stats on the 2018/19 season from footystats.co.uk and as.eu 
