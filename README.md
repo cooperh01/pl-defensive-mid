@@ -43,13 +43,50 @@
 
 
 -	Python code for Bar Chart:
+```python
+# Bar Graph (Decrease in goals conceded when player is on the pitch (per 90 mins))
 
+plt.figure(figsize=(20,7))
+           
+sns.barplot(top_30.full_name, top_30.conceded_per_90_diff)
+plt.title('Decrease in goals conceded when player is on the pitch, per 90 mins (Top 25)', fontsize=28)
+plt.ylabel('Conceded without player per 90 - Conceded with player per 90')
+plt.xlabel('Player name')
+plt.xticks(rotation=50)
+
+plt.show()
+```
 
 ## Scatter Graph: Retrieving possession;
 
 -	
 
 Using data from as.eu I was able to join them together in MySQL and produce a scatter graph of Successful Tackles v interceptions in Python. (see python code below)
+```python
+# Scatter Graph: Obtain possession(Successful Tackles v interceptions)
+
+plt.figure(figsize=(20,20))
+
+pip90 = ivt.passes_intercepted_per90
+stp90 = ivt.successful_tackles_per90
+plr = ivt.player
+
+plt.scatter(pip90, stp90, c=stp90)
+plt.title('Retrieving Possession (Top 50 from Successful tackles per 90)', fontsize=28)
+plt.xlabel('Passes Intercepted per 90', fontsize=12)
+plt.ylabel('Successful Tackles per 90', fontsize=12)
+
+# labels for points
+
+for i, txt in enumerate(plr):
+    plt.annotate(txt, (pip90[i], stp90[i]),
+                textcoords="offset points", # how to position the label
+                xytext=(0,10), # distance from label to points (x,y)
+                size=12, # size of label
+                ha='center') # horizontal alignment can be left, right or center
+
+plt.show()
+```
 -	Unfortunately, the data did not have the player’s positions and their names were slightly different to the dataset from footystats.co.uk so I was unable to join them and therefore some non-midfielders were included in the graph.
 
 
@@ -59,7 +96,31 @@ Using data from as.eu I was able to join them together in MySQL and produce a sc
 -	In MySQL, using the ‘successful passes’ and ‘attempted passes’ data from as.eu I was able to calculate the ‘Successful pass percentage’. 
 -	In MySQL, using the ‘clearances leading to possession’ and ‘minutes played’ I could calculate ‘clearances leading to possession per 90’.
 -	I was then able to plot a scatter graph in Python to compare players possession keeping capabilities (see below).
+```python
+# Scatter Graph: Retain possession (Successful pass rate v clearences to possesion per 90)
 
+plt.figure(figsize=(20,20))
+
+spp = rpmi.successful_pass_percentage
+ctp = rpmi.Clearences_leading_to_possession_per90
+plr = rpmi.player
+
+plt.scatter(spp, ctp, c=ctp)
+plt.title('Retaining Possession (Top 30 from Successful pass%)', fontsize=28)
+plt.xlabel('Successful passes %', fontsize=12)
+plt.ylabel('Clearences leading to possession per 90', fontsize=12)
+
+# labels for points
+
+for i, txt in enumerate(plr):
+    plt.annotate(txt, (spp[i], ctp[i]),
+                textcoords="offset points", # how to position the label
+                xytext=(0,10), # distance from label to points (x,y)
+                size=12, # size of label
+                ha='center') # horizontal alignment can be left, right or center
+
+plt.show()
+```
 
 ## Radar chart: Key Candidates compared:
 
@@ -68,6 +129,60 @@ Using data from as.eu I was able to join them together in MySQL and produce a sc
 -	In MySQL I calculated success percentages for passes and aerial duals, I then times them by 3 to give the chart a clearer look when compared the other variables.
 -	I then used Python the create the chart (see below).
 
+```python
+plt.figure(figsize=(15,15))
+    
+# number of variable
+categories=list(kc)[1:]
+N = len(categories)
+ 
+# angle of each axis in the plot
+angles = [n / float(N) * 2 * pi for n in range(N)]
+angles += angles[:1]
+ 
+# spider plot
+ax = plt.subplot(111, polar=True)
+ 
+# axis to be on top
+ax.set_theta_offset(pi / 2)
+ax.set_theta_direction(-1)
+ 
+# axe per variable
+plt.xticks(angles[:-1], categories)
+ 
+# ylabels
+ax.set_rlabel_position(50)
+plt.yticks(color="grey")
+plt.ylim(0,2.8)
+ 
+
+ 
+# Ind1
+values=kc.loc[1].drop('player').values.flatten().tolist()
+values += values[:1]
+ax.plot(angles, values, linewidth=1, linestyle='solid', label="Onyinye Ndidi")
+ax.fill(angles, values, 'b', alpha=0.1)
+ 
+# Ind2
+values=kc.loc[18].drop('player').values.flatten().tolist()
+values += values[:1]
+ax.plot(angles, values, linewidth=1, linestyle='solid', label="Declan Rice")
+ax.fill(angles, values, 'r', alpha=0.1)
+
+# Ind3
+values=kc.loc[108].drop('player').values.flatten().tolist()
+values += values[:1]
+ax.plot(angles, values, linewidth=1, linestyle='solid', label="Jefferson Lerma")
+ax.fill(angles, values, 'g', alpha=0.1)
+ 
+# legend
+plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
+
+# title
+plt.title('Radar Chart: Key Candidates Compared (percentages x3)', fontsize=30)
+
+plt.show()
+```
 
 
 
