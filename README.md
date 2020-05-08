@@ -1,4 +1,4 @@
-# Scouting a Defensive Midfielder: Data Analysis (Using MySQL and Python)
+# Scouting a Defensive Midfielder: Data Analysis
 
 # Project Overview:
 
