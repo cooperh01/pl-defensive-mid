@@ -11,8 +11,8 @@
 -	MySQL
 -	Python Version 3.7
 -	Packages used: pandas, numpy, matplot.lib, seaborn
--	Datasets from Footystats.co.uk for the Premier League 2018/19 season: players.csv, teams.csv, league_matches.csv and league_stats.csv.
--	Data from as.eu for the Premier League 2018/19 season (minutes_played, aerial_balls_won, aerial_balls_lost, attempted_passes, Clearances, Clearances_leading_to_possession, Completed_passes, Fouls_committed, passes_intercepted, Successful_tackles, Tackles, Clean_sheets)
+-	Datasets from Footystats.co.uk for the Premier League 2018/19 season: players.csv, teams.csv, league_matches.csv and league_stats.csv. https://footystats.org/download-stats-csv
+-	Data from as.eu for the Premier League 2018/19 season (minutes_played, aerial_balls_won, aerial_balls_lost, attempted_passes, Clearances, Clearances_leading_to_possession, Completed_passes, Fouls_committed, passes_intercepted, Successful_tackles, Tackles, Clean_sheets) https://en.as.com/resultados/futbol/inglaterra/2018_2019/ranking/equipos/
 
 ## Data Cleaning:
 
