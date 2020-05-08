@@ -140,7 +140,7 @@ plt.show()
 
 -	From the other Graphs I identified Onyinye Ndidi, Declan Rice and Jefferson Lerma as top candidates who were under the age of 27. 
 -	I compared Successful pass percentage, Successful tackles per 90, Passes intercepted per 90 and Aerial balls won percentage
--	In MySQL I calculated success percentages for passes and aerial duals, I then times them by 3 to give the chart a clearer look when compared the other variables.
+-	In MySQL I calculated success percentages for passes and aerial duals, I then times them by 3 to make the chart clearer and easier to compare with the other variables.
 -	I then used Python the create the chart (see below).
 
 ```python
