@@ -1,4 +1,4 @@
-# Scouting a EPL Defensive Midfielder: Data Analysis
+# Scouting an EPL Defensive Midfielder: Data Analysis
 
 # Project Overview:
 
