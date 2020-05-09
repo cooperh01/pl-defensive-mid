@@ -24,15 +24,15 @@
 -	Joined many datasets scraped from as.eu into one
 
 ## Exploratory Data Analysis (EDA):
-
+*All graphs only including players who have played over 900 minutes
 ![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Bar_chart.png)
-*only including players who have played over 900 minutes
+
 ![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Retaining_poss_graph.png)
-*only including players who have played over 900 minutes
+
 ![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Retrieving_poss_graph.png)
-*only including players who have played over 900 minutes
+
 ![](https://github.com/cooperh01/pl-defensive-mid/blob/master/Radar_Chart_KCC.png)
-*only including players who have played over 900 minutes
+
 
 ## Model Building:
 
