@@ -22,7 +22,7 @@
 -	Removed hyperlink from player’s name from as.eu data
 -	Unmerged cells and deleted blanks from as.eu
 -	Joined many datasets scraped from as.eu into one
--       Used the drop index function in python to remove non midfielders from as.eu dataset
+- Used the drop index function in python to remove non midfielders from as.eu dataset
 
 ## Exploratory Data Analysis (EDA):
 *All graphs only including players who have played over 900 minutes
@@ -110,7 +110,7 @@ plt.show()
 
 -	In MySQL, using the ‘successful passes’ and ‘attempted passes’ data from as.eu I was able to calculate the ‘Successful pass percentage’. 
 -	In MySQL, using the ‘clearances leading to possession’ and ‘minutes played’ I could calculate ‘clearances leading to possession per 90’.
--       Using the drop index function in Python, I filtered out the non midfielders to clean the data (see below)
+- Using the drop index function in Python, I filtered out the non midfielders to clean the data (see below)
 ```python
 # Data Cleaning (removing non midfielders)
 
