@@ -17,11 +17,12 @@
 ## Data Cleaning:
 
 -	Corrected positions of some players (e.g. Midfielder -> Defender)
--	Corrected incorrect data from footystats.co.uk by cross referencing with transfermarkt.co.uk
+-	Corrected incorrect data from footystats.org by cross referencing with transfermarkt.co.uk
 -	Removed player images and their positions from as.eu data
 -	Removed hyperlink from player’s name from as.eu data
 -	Unmerged cells and deleted blanks from as.eu
 -	Joined many datasets scraped from as.eu into one
+-       Used the drop index function in python to remove non midfielders from as.eu dataset
 
 ## Exploratory Data Analysis (EDA):
 *All graphs only including players who have played over 900 minutes
@@ -109,6 +110,14 @@ plt.show()
 
 -	In MySQL, using the ‘successful passes’ and ‘attempted passes’ data from as.eu I was able to calculate the ‘Successful pass percentage’. 
 -	In MySQL, using the ‘clearances leading to possession’ and ‘minutes played’ I could calculate ‘clearances leading to possession per 90’.
+-       Using the drop index function in Python, I filtered out the non midfielders to clean the data (see below)
+```python
+# Data Cleaning (removing non midfielders)
+
+rpm = rp.drop(index=[1,2,3,4,5,6,7,8,15,18,27,32,33,34,37,39,42,43,44,47,49]).head(30)
+rpmi = rpm.reset_index()
+rpmi
+```
 -	I was then able to plot a scatter graph in Python to compare players possession keeping capabilities (see below).
 ```python
 # Scatter Graph: Retain possession (Successful pass rate v clearences to possesion per 90)
