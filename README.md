@@ -77,7 +77,7 @@ plt.xticks(rotation=50)
 plt.show()
 ```
 
-## Scatter Graph: Retrieving possession;
+## Scatter Graph: Retrieving possession:
 
 - Using data from as.eu I was able to join them together in MySQL and produce a scatter graph of Successful Tackles per 90 v interceptions per 90 in Python. (see python code below)
 ```python
